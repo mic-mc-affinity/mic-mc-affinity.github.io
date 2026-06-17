@@ -8,7 +8,7 @@
 
 <style>
 :root{
-    --blue:#1f4f82;
+    --blue:#2e3b51;
     --bg:#f4f4f4;
     --card:#ffffff;
     --text:#222;
@@ -28,6 +28,30 @@ body{
     padding:50px;
 }
 
+.back-button{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    background:#2e3b51;
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:all .2s ease;
+}
+
+.back-button:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
 .container{
     max-width:1400px;
     margin:auto;
@@ -36,6 +60,7 @@ body{
 h1{
     margin-bottom:40px;
     color:var(--blue);
+    text-align:center;
 }
 
 .card{
@@ -96,18 +121,30 @@ h1{
 }
 
 @media (max-width:768px){
+
     body{
         padding:20px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .back-button{
+        position:static;
+
+        display:inline-block;
+
+        margin-bottom:25px;
+
+        padding:14px;
     }
+
 }
 </style>
 </head>
 
 <body>
+
+<a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/" class="back-button">
+← All Segments
+</a>
 
 <div class="container">
 
@@ -124,15 +161,14 @@ h1{
                 </iframe>
             </div>
 
-            <p class="description">
-                Supporting materials.
-            </p>
+        <p class="description">
+            Supporting materials:
+        </p>
 
-            <ul class="links">
-                <li><a href="#">resource link</a></li>
-                <li><a href="#">resource link</a></li>
-            </ul>
-        </div>
+        <ul class="links">
+            <li><a href="#">resource link</a></li>
+            <li><a href="#">resource link</a></li>
+        </ul>
 
     </div>
 
