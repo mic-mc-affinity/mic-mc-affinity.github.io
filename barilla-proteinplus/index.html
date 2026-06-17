@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campaign Library</title>
+
+<style>
+
+body{
+    background-color:#e5e5e5;
+    color:#2e3b51;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
+    margin:0;
+}
+
+/* HEADER */
+
+.header{
+    background:white;
+    padding:10px 20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.header-inner{
+
+    max-width:600px;
+    margin:0 auto;
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-end;
+    gap:20px;
+
+}
+
+.header-logo{
+    width:50px;
+    height:auto;
+}
+
+.header-title{
+    flex:1;
+    text-align:center;
+    font-size:1.3rem;
+    font-weight:600;
+    line-height:1;
+}
+
+/* PAGE CONTENT */
+
+.content{
+
+    padding:50px 20px;
+
+}
+
+p{
+
+    max-width:700px;
+
+    margin:0 auto 10px;
+
+    line-height:1.6;
+
+}
+
+.button-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    max-width:500px;
+
+    margin:40px auto 0 auto;
+
+}
+
+.button-list a{
+
+    background:#2e3b51;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:all .2s ease;
+
+}
+
+.button-list a:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+    .header-inner{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:10px;
+
+    }
+
+    .header-logo{
+
+        width:100px;
+
+    }
+
+    .header-title{
+
+        font-size:1.2rem;
+
+    }
+
+    .content{
+
+        padding:30px 20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <img src="../images/NXT-Primary Stacked.png"
+            alt="NXT Logo"
+            class="header-logo">
+
+        <div class="header-title">
+
+            CAMPAIGN EXAMPLES
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="content">
+
+    <img
+        style="width:150px;"
+        src="barilla-logo.png"
+        alt="Barilla Logo">
+
+    <p style="font-weight:bold;">
+        Protein Plus Bulk Pack Short Cuts
+    </p>
+    <p>
+        Macaroni Heavy Wall Elbow 80oz x 4 USA 1000023798<br>
+        Elbows BA 160oz x 2 USA 1000440041<br>
+        Cellentani BA 160oz x 2 USA 1000007428<br>
+        Penne Rigate BA 160oz x 2 USA 1000440072<br>
+        Pipette BA 160oz x 2 USA 1000002834
+    </p>
+
+    <div class="button-list">
+
+        <a href="https://mic-mc-affinity.github.io/barilla-proteinplus/healthcare.html">
+
+            Healthcare & Senior Living Example
+
+        </a>
+
+        <a href="https://mic-mc-affinity.github.io/barilla-proteinplus/candu.html">
+
+            C&U and B&I Example
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
