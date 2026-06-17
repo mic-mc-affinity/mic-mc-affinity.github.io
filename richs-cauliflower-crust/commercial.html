@@ -31,19 +31,31 @@ body{
     padding:50px;
 }
 
-.button-list a{
-    background:#2e3b51;
-    color:white;
+.back-button{
+    position:absolute;
+    top:30px;
+    right:30px;
+
+    color:var(--blue);
+    background:transparent;
+
+    border:2px solid var(--blue);
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
     text-decoration:none;
-    padding:18px;
-    border-radius:10px;
+
     font-weight:600;
+
     transition:all .2s ease;
 }
 
-.button-list a:hover{
-    transform:translateY(-2px);
-    opacity:.9;
+.back-button:hover{
+    background:var(--blue);
+    color:white;
+}
 
 .container{
     max-width:1400px;
@@ -137,6 +149,15 @@ h1{
         padding:20px;
     }
 
+    .back-button{
+        top:20px;
+        right:20px;
+
+        padding:8px 14px;
+
+        font-size:.9rem;
+    }
+
     h1{
         margin-top:50px;
         margin-bottom:25px;
@@ -151,7 +172,7 @@ h1{
 
 <body>
 
-<a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/" class="button-list">
+<a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/" class="back-button">
     ← All Campaigns
 </a>
 
