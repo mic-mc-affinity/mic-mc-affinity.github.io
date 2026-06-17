@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
 <title>Campaign Library</title>
 
 <style>
@@ -25,17 +25,25 @@ body{
 
     background:white;
 
-    padding:10px 10px;
+    padding:10px 20px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.header-inner{
+
+    max-width:1100px;
+
+    margin:0 auto;
 
     display:flex;
 
-    justify-content:left;
+    justify-content:flex-start;
 
     align-items:flex-end;
 
-    gap:30px;
-
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    gap:20px;
 
 }
 
@@ -52,6 +60,8 @@ body{
     font-size:1rem;
 
     font-weight:600;
+
+    line-height:1;
 
 }
 
@@ -117,13 +127,13 @@ p{
 
 @media (max-width:768px){
 
-    .header{
+    .header-inner{
 
         flex-direction:column;
 
-        gap:10px;
+        align-items:center;
 
-        padding:20px;
+        gap:10px;
 
     }
 
@@ -155,23 +165,29 @@ p{
 
 <header class="header">
 
-    <img src="../images/NXT-Primary Stacked.png"
-         alt="NXT Logo"
-         class="header-logo">
+    <div class="header-inner">
 
-    <div class="header-title">
+        <img src="../images/NXT-Primary Stacked.png"
+            alt="NXT Logo"
+            class="header-logo">
 
-        CAMPAIGN EXAMPLES
+        <div class="header-title">
+
+            CAMPAIGN EXAMPLES
+
+        </div>
 
     </div>
 
 </header>
 
 <div class="content">
-    
-    <img style="width: 170px;" src="richs-logo-white-outline.png"
+
+    <img
+        style="width:170px;"
+        src="richs-logo-white-outline.png"
         alt="Rich Logo">
-    
+
     <p style="font-weight:bold;">
 
         10” Gluten-Free Seasoned Cauliflower Pizza Crust - 24 5.2oz. (11819)
