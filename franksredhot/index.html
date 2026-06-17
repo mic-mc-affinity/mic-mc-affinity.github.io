@@ -8,7 +8,7 @@
 
 <style>
 :root{
-    --blue:#1f4f82;
+    --blue:#2e3b51;
     --bg:#f4f4f4;
     --card:#ffffff;
     --text:#222;
@@ -28,6 +28,30 @@ body{
     padding:50px;
 }
 
+.back-button{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    background:#2e3b51;
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:all .2s ease;
+}
+
+.back-button:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
 .container{
     max-width:1400px;
     margin:auto;
@@ -36,15 +60,13 @@ body{
 h1{
     margin-bottom:40px;
     color:var(--blue);
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
-    gap:50px;
+    text-align:center;
 }
 
 .card{
+    max-width:750px;
+    margin:auto;
+
     background:var(--card);
     padding:20px;
     border-radius:12px;
@@ -99,112 +121,59 @@ h1{
 }
 
 @media (max-width:768px){
+
     body{
         padding:20px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .back-button{
+        position:static;
+
+        display:inline-block;
+
+        margin-bottom:25px;
+
+        padding:14px;
     }
+
 }
 </style>
 </head>
 
 <body>
 
+<a style="display: none;" href="https://mic-mc-affinity.github.io/" class="back-button">
+← All Examples
+</a>
+
 <div class="container">
 
-    <h1>Campaign Library</h1>
+    <h1>McCormick Franks RedHot The GOAT</h1>
+    <p>Featuring Franks RedHot Original and Full Line</p>
 
-    <div class="grid">
+    <div class="card">
 
-        <!-- Campaign 1 -->
-        <div class="card">
-            <h2>Campaign 1</h2>
+            <h2>Commercial Operator Example</h2>
 
             <div class="video-wrapper">
                 <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Campaign 1"
+                    src="https://player.vimeo.com/video/1187927718?h=53506a0b55"
+                    title="Franks Campaign"
                     allowfullscreen>
                 </iframe>
             </div>
 
-            <p class="description">
-                Overview and supporting materials for Campaign 1.
-            </p>
+            <div ;>
+        <p class="description">
+            Supporting materials:
+        </p>
 
-            <ul class="links">
-                <li><a href="#">Landing Page</a></li>
-                <li><a href="#">PDF Download</a></li>
-            </ul>
-        </div>
-
-        <!-- Campaign 2 -->
-        <div class="card">
-            <h2>Campaign 2</h2>
-
-            <div class="video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Campaign 2"
-                    allowfullscreen>
-                </iframe>
+        <ul class="links">
+            <li><a href="https://www.mccormickforchefs.com/-/media/mccormickforchefs2017/rebates/2026-rebates/m4c_fy26_innovation_rebate_march_digital_120425.pdf?rev=ef8f7be68c7b431b812f77f53abb3350"
+                >Rebate</a></li>
+            
+        </ul>
             </div>
-
-            <p class="description">
-                Overview and supporting materials for Campaign 2.
-            </p>
-
-            <ul class="links">
-                <li><a href="#">Landing Page</a></li>
-                <li><a href="#">Creative Assets</a></li>
-            </ul>
-        </div>
-
-        <!-- Campaign 3 -->
-        <div class="card">
-            <h2>Campaign 3</h2>
-
-            <div class="video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Campaign 3"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="description">
-                Overview and supporting materials for Campaign 3.
-            </p>
-
-            <ul class="links">
-                <li><a href="#">Landing Page</a></li>
-                <li><a href="#">Tracking Link</a></li>
-            </ul>
-        </div>
-
-        <!-- Campaign 4 -->
-        <div class="card">
-            <h2>Campaign 4</h2>
-
-            <div class="video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Campaign 4"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="description">
-                Overview and supporting materials for Campaign 4.
-            </p>
-
-            <ul class="links">
-                <li><a href="#">Landing Page</a></li>
-                <li><a href="#">Download PDF</a></li>
-            </ul>
-        </div>
 
     </div>
 
