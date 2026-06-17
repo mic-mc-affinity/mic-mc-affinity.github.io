@@ -2,9 +2,12 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campaign Library</title>
+
+<title>AffinityNXT Campaign Library</title>
 
 <style>
 
@@ -14,45 +17,134 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     margin:0;
-    padding:60px 20px;
 }
 
-h1{
-    margin-bottom:10px;
-    font-size:2.5rem;
+/* HEADER */
+
+.header{
+
+    background:white;
+
+    padding:20px 30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.header-logo{
+
+    width:140px;
+
+    height:auto;
+
+}
+
+.header-title{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+/* PAGE CONTENT */
+
+.content{
+
+    padding:50px 20px;
+
 }
 
 p{
+
     max-width:700px;
+
     margin:0 auto 10px;
+
     line-height:1.6;
+
 }
 
 .button-list{
+
     display:flex;
+
     flex-direction:column;
+
     gap:18px;
+
     max-width:500px;
-    margin:auto;
+
+    margin:40px auto 0 auto;
+
 }
 
 .button-list a{
+
     background:#2e3b51;
+
     color:white;
+
     text-decoration:none;
+
     padding:18px;
+
     border-radius:10px;
+
     font-weight:600;
+
     transition:all .2s ease;
+
 }
 
 .button-list a:hover{
+
     transform:translateY(-2px);
+
     opacity:.9;
+
 }
-.logo{
-    width:200px;
-    height:auto;
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        padding:20px;
+
+    }
+
+    .header-logo{
+
+        width:120px;
+
+    }
+
+    .header-title{
+
+        font-size:1.6rem;
+
+    }
+
+    .content{
+
+        padding:30px 20px;
+
+    }
+
 }
 
 </style>
@@ -60,30 +152,66 @@ p{
 </head>
 
 <body>
-<img src="richs-logo-white-outline.png" alt="rich logo" class="logo">
-<h1>Campaign Segments</h1>
 
-<p style="font-weight: bold;">10” Gluten-Free Seasoned Cauliflower Pizza Crust <br/> 24 5.2oz.</p>
-<p>Product Code: 11819</p>
+<header class="header">
 
+    <img src="richs-logo-white-outline.png"
+         alt="Rich's Logo"
+         class="header-logo">
 
-<div class="button-list">
+    <div class="header-title">
 
-    <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/commercial">
-        Commercial Operators
-    </a>
+        Campaign Segments
 
-    <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/candu.html">
-        College & University
-    </a>
+    </div>
 
-    <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/travel.html">
-        Travel & Leisure
-    </a>
+</header>
 
-    <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/healthcare.html">
-        Healthcare & Senior Living
-    </a>
+<div class="content">
+
+    <p style="font-weight:bold;">
+
+        10” Gluten-Free Seasoned Cauliflower Pizza Crust
+
+        <br>
+
+        24 5.2oz.
+
+    </p>
+
+    <p>
+
+        Product Code: 11819
+
+    </p>
+
+    <div class="button-list">
+
+        <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/commercial">
+
+            Commercial Operators
+
+        </a>
+
+        <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/candu.html">
+
+            College & University
+
+        </a>
+
+        <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/travel.html">
+
+            Travel & Leisure
+
+        </a>
+
+        <a href="https://mic-mc-affinity.github.io/richs-cauliflower-crust/healthcare.html">
+
+            Healthcare & Senior Living
+
+        </a>
+
+    </div>
 
 </div>
 
