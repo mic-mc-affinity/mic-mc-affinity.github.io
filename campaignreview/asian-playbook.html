@@ -10,7 +10,6 @@
       --primary: #2e3b51;
       --secondary: #f0f2f5;
       --text: #333;
-      --light-text: #666;
       --white: #fff;
     }
 
@@ -45,8 +44,6 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
     }
 
     .logo {
@@ -63,7 +60,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       overflow: hidden;
-      margin-top: 20px;
     }
 
     .video-wrapper {
@@ -82,11 +78,11 @@
     }
 
     .video-info {
-      padding: 20px;
+      padding: clamp(20px, 4vw, 40px);
     }
 
     .video-title {
-      font-size: 24px;
+      font-size: clamp(20px, 3vw, 28px);
       font-weight: 600;
       margin-bottom: 10px;
       color: var(--primary);
@@ -98,15 +94,17 @@
     }
 
     .promo-text {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.25;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--primary);
     }
 
     .button-row {
-      margin-top: 20px;
+      margin-top: 24px;
       display: flex;
-      gap: 20px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
@@ -128,21 +126,43 @@
       transform: translateY(-2px);
     }
 
+    .map-image {
+      padding: 0 clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px);
+    }
+
+    .map-image img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
     @media (max-width: 768px) {
-      .logo-container {
-        gap: 15px;
+      .content {
+        padding: 30px 0;
       }
 
       .logo {
         max-height: 40px;
       }
 
-      .video-title {
-        font-size: 20px;
+      .request-button {
+        width: 100%;
+        text-align: center;
       }
     }
 
     @media (max-width: 480px) {
+      .container {
+        padding: 0 14px;
+      }
+
+      .content {
+        padding: 20px 0;
+      }
+
       .logo {
         max-height: 30px;
       }
@@ -189,40 +209,32 @@
           </p>
 
           <div class="button-row">
-            <a 
-              href="https://flipbook.affinitysales.com/books/kpku/"
-              class="request-button"
-              target="_blank">
+            <a href="https://flipbook.affinitysales.com/books/kpku/" class="request-button" target="_blank">
               Midwest Playbook
             </a>
-            <a 
-              href="https://flipbook.affinitysales.com/books/nafb/"
-              class="request-button"
-              target="_blank">
+
+            <a href="https://flipbook.affinitysales.com/books/nafb/" class="request-button" target="_blank">
               Northeast Playbook
             </a>
-            <a 
-              href="https://flipbook.affinitysales.com/books/guae/"
-              class="request-button"
-              target="_blank">
+
+            <a href="https://flipbook.affinitysales.com/books/guae/" class="request-button" target="_blank">
               Southeast Playbook
-            </a>   
-            <a 
-              href=" https://flipbook.affinitysales.com/books/flkc/"
-              class="request-button"
-              target="_blank">
+            </a>
+
+            <a href="https://flipbook.affinitysales.com/books/flkc/" class="request-button" target="_blank">
               Southwest Playbook
             </a>
-            <a 
-              href="https://flipbook.affinitysales.com/books/ymtk/"
-              class="request-button"
-              target="_blank">
-              West Playbook
-            </a>                                             
-          </div>
 
+            <a href="https://flipbook.affinitysales.com/books/ymtk/" class="request-button" target="_blank">
+              West Playbook
+            </a>
+          </div>
         </div>
-        <img src="images/ag-map.png" alt="affinity group map">
+
+        <div class="map-image">
+          <img src="images/ag-map.png" alt="Affinity Group regional map">
+        </div>
+
       </div>
 
     </div>
