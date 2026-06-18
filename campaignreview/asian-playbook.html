@@ -1,313 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo ($videoData && isset($videoData['matched_name']) && $videoData['matched_name']) ? htmlspecialchars($videoData['matched_name']) : 'Affinity Video Player'; ?></title>
-    <style>
-        :root {
-            --primary: #4169E1;
-            --secondary: #f0f2f5;
-            --text: #333;
-            --light-text: #666;
-            --white: #fff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-        }
-        
-        body {
-            background-color: var(--secondary);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-        
-        .client-logo {
-            height: 40px;
-            width: auto;
-            border-left: 1px solid #e0e0e0;
-            padding-left: 30px;
-        }
-        
-        .content {
-            padding: 40px 0;
-        }
-        
-        .video-container {
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            margin-top: 20px;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background-color: #000;
-        }
-        
-        .video-thumbnail {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            cursor: pointer;
-            z-index: 10;
-            transition: opacity 0.3s;
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background-color: rgba(65, 105, 225, 0.8);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 20;
-            transition: background-color 0.3s;
-        }
-        
-        .play-button:hover {
-            background-color: rgba(65, 105, 225, 1);
-        }
-        
-        .play-button::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-top: 20px solid transparent;
-            border-bottom: 20px solid transparent;
-            border-left: 30px solid white;
-            margin-left: 8px;
-        }
-        
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 5;
-        }
-        
-        .video-info {
-            padding: 20px;
-        }
-        
-        .video-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .video-address {
-            color: var(--bold-text);
-            margin-bottom: 20px;
-        }
-        
-        .video-description {
-            color: var(--light-text);
-            margin-bottom: 20px;
-        }
-        
-        .error-message {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            font-size: 18px;
-            color: #d32f2f;
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .logo-container {
-                gap: 15px;
-            }
-            
-            .logo, .client-logo {
-                height: 40px;
-            }
-            
-            .client-logo {
-                padding-left: 15px;
-            }
-            
-            .video-title {
-                font-size: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo, .client-logo {
-                height: 30px;
-            }
-            
-            .play-button {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .play-button::after {
-                border-top: 15px solid transparent;
-                border-bottom: 15px solid transparent;
-                border-left: 22px solid white;
-                margin-left: 6px;
-            }
-        }
-        
-        .request-button {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            font-size: 16px;
-            font-weight: 600;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: background-color 0.3s, transform 0.2s;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affinity Video Player</title>
 
-        .request-button:hover {
-            background-color: #3154b5;
-            transform: translateY(-2px);
-        }
+  <style>
+    :root {
+      --primary: #4169E1;
+      --secondary: #f0f2f5;
+      --text: #333;
+      --light-text: #666;
+      --white: #fff;
+    }
 
-        .request-button:active {
-            background-color: #27458f;
-            transform: translateY(0);
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
-    </style>
+    body {
+      background: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: auto;
+      max-height: 50px;
+    }
+
+    .content {
+      padding: 40px 0;
+    }
+
+    .video-container {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .video-address {
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .promo-text {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .button-row {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .request-button {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .request-button:hover {
+      background: #3154b5;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .logo-container {
+        gap: 15px;
+      }
+
+      .logo {
+        max-height: 40px;
+      }
+
+      .video-title {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        max-height: 30px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container">
-                    <img src="affinity-logo.png" alt="Affinity Logo" class="logo">
-                    <img src="M4C logo.png" alt="M4C logo.png" class="logo" style="height: 40px;">
-                    <img src="FRH logo.png" alt="FRH logo.png" class="logo" style="height: 50px;">
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <main class="content">
-        <div class="container">
-            <?php if ($error): ?>
-                <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
-            <?php elseif ($videoData): ?>
-                <div class="video-container">
-                    <div class="video-wrapper">
-                        <?php if (isset($videoData['thumbnailURL']) && $videoData['thumbnailURL']): ?>
-                        <img src="<?php echo htmlspecialchars($videoData['thumbnailURL']); ?>" alt="Video Thumbnail" class="video-thumbnail" id="video-thumbnail">
-                        <?php endif; ?>
-                        <div class="play-button" id="play-button"></div>
-                        <video id="video-player" controls>
-                            <?php if (isset($videoData['videoURL']) && $videoData['videoURL']): ?>
-                            <source src="<?php echo htmlspecialchars($videoData['videoURL']); ?>" type="video/mp4">
-                            <?php endif; ?>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="video-info">
-                        <h2 class="video-title"><?php echo htmlspecialchars($videoData['Account'] ?? 'Video'); ?></h2>
-                        <p class="video-address"><?php echo htmlspecialchars($videoData['Address1'] . ' ' . $videoData['City'] . ', ' . $videoData['State']); ?></p>
-                        <p style="font-size: 20px; font-weight: bold;"> Try McCormick Products For Free! </p>
-                        <p class="video-address"> Reply to your Affinity Group sales rep for assistance </p>
-                            <!-- CTA BUTTONS -->
-                         <div style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
-                            <a href="https://www.mccormickforchefs.com/-/media/mccormickforchefs2017/rebates/2026-rebates/m4c_fy26_innovation_rebate_march_digital_120425.pdf?rev=ef8f7be68c7b431b812f77f53abb3350" class="request-button" target="_blank">Open The Rebate Form</a>
-                    </div>
-                </div>
-            <?php else: ?>
-                <div class="error-message">Video data could not be loaded.</div>
-            <?php endif; ?>
-        </div>
-    </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Only set up the video player if elements exist
-            const videoPlayer = document.getElementById('video-player');
-            const playButton = document.getElementById('play-button');
-            const thumbnail = document.getElementById('video-thumbnail');
-            
-            if (videoPlayer && playButton && thumbnail) {
-                // Play button functionality
-                playButton.addEventListener('click', function() {
-                    videoPlayer.play();
-                    playButton.style.display = 'none';
-                    thumbnail.style.display = 'none';
-                });
-                
-                thumbnail.addEventListener('click', function() {
-                    videoPlayer.play();
-                    playButton.style.display = 'none';
-                    thumbnail.style.display = 'none';
-                });
-                
-                // Reset thumbnail and play button when video ends
-                videoPlayer.addEventListener('ended', function() {
-                    playButton.style.display = 'flex';
-                    thumbnail.style.display = 'block';
-                });
-            }
-        });
-    </script>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="affinity-logo.png" alt="Affinity Logo" class="logo">
+        <img src="M4C logo.png" alt="M4C Logo" class="logo">
+        <img src="FRH logo.png" alt="FRH Logo" class="logo">
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="container">
+
+      <div class="video-container">
+
+        <div class="video-wrapper">
+          <iframe 
+            src="https://player.vimeo.com/video/YOUR-VIMEO-ID-HERE"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="video-info">
+          <h2 class="video-title">Account Name Here</h2>
+
+          <p class="video-address">
+            Address Here, City, State
+          </p>
+
+          <p class="promo-text">
+            Try McCormick Products For Free!
+          </p>
+
+          <p class="video-address">
+            Reply to your Affinity Group sales rep for assistance.
+          </p>
+
+          <div class="button-row">
+            <a 
+              href="https://www.mccormickforchefs.com/-/media/mccormickforchefs2017/rebates/2026-rebates/m4c_fy26_innovation_rebate_march_digital_120425.pdf?rev=ef8f7be68c7b431b812f77f53abb3350"
+              class="request-button"
+              target="_blank">
+              Open The Rebate Form
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
 </body>
 </html>
