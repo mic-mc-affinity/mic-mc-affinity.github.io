@@ -121,7 +121,7 @@ p {
     font-size: 0.9rem;
 }
 
-.product-list li {
+.product-list li { 
     margin-bottom: 12px;
     line-height: 1.35;
 }
