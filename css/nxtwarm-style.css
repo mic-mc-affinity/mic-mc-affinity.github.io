@@ -106,10 +106,6 @@ p {
     margin-bottom: 10px;
 }
 
-.description {
-    margin-bottom: 8px;
-}
-
 /* PRODUCT LIST */
 
 .product-list-title {
@@ -165,10 +161,12 @@ p {
 .links {
     list-style: disc;
     padding-left: 22px;
+    font-size: 0.9rem;
 }
 
 .links li {
     margin-bottom: 8px;
+    line-height: 1.35;
 }
 
 .links a {
