@@ -108,6 +108,12 @@ p {
 
 /* FEATURED PRODUCTS & SUPPORTING MATERIALS */
 
+.product-list-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 25px 0 12px;
+}
+
 .product-list,
 .links {
     list-style: disc;
