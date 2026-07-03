@@ -106,24 +106,29 @@ p {
     margin-bottom: 10px;
 }
 
-/* PRODUCT LIST */
+/* FEATURED PRODUCTS & SUPPORTING MATERIALS */
 
-.product-list-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 25px 0 12px;
-}
-
-.product-list {
-    margin: 0 0 30px;
+.product-list,
+.links {
+    list-style: disc;
     padding-left: 22px;
+    margin: 0 0 30px;
     text-align: left;
-    font-size: 0.9rem;
 }
 
-.product-list li { 
-    margin-bottom: 12px;
+.product-list li,
+.links li {
+    font-size: 0.9rem;
     line-height: 1.35;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.links a {
+    font-size: inherit;
+    font-weight: inherit;
+    color: var(--blue);
+    text-decoration: underline;
 }
 
 /* CARD */
@@ -154,25 +159,6 @@ p {
     width: 100%;
     height: 100%;
     border: 0;
-}
-
-/* LINKS */
-
-.links {
-    list-style: disc;
-    padding-left: 22px;
-    font-size: 0.9rem;
-}
-
-.links li {
-    margin-bottom: 8px;
-    line-height: 1.35;
-}
-
-.links a {
-    color: var(--blue);
-    text-decoration: underline;
-    font-weight: 400;
 }
 
 /* BUTTONS */
