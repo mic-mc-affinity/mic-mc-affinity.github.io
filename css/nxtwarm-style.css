@@ -209,8 +209,8 @@ p {
     background: #ffffff;
     color: var(--blue);
 
-    border: 1px solid var(--blue);
-    border-radius: 999px;
+    border: 0px solid var(--blue);
+    border-radius: 10px;
 
     padding: 8px 14px;
 
