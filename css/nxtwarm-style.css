@@ -205,7 +205,6 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: var(--shadow);
 
     background: #ffffff;
     color: var(--blue);
@@ -213,6 +212,8 @@ p {
     border: 0px solid var(--blue);
     border-radius: 10px;
 
+    box-shadow: var(--shadow);
+    
     padding: 8px 14px;
 
     font-size: 0.9rem;
