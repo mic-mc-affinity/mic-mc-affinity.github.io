@@ -7,22 +7,7 @@
     <title>Campaign Library</title>
     <link rel="stylesheet" href="../../css/nxtwarm-style.css">
 </head>
-<script>
-    const tabButtons = document.querySelectorAll('.card-tabs button');
-    const tabPanels = document.querySelectorAll('.tab-panel');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabId = button.dataset.tab;
-
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabPanels.forEach(panel => panel.classList.remove('active'));
-
-            button.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
-</script>
 <body>
 
 <header class="header">
@@ -60,43 +45,68 @@
             <li>Penne Rigate BA 160oz x 2 USA (1000440072)</li>
             <li>Pipette BA 160oz x 2 USA (1000002834)</li>
         </ul>
-        
-    <div class="card">
 
-        <div class="card-tabs">
-            <button class="active" data-tab="healthcare">Healthcare</button>
-            <button data-tab="cu">C&amp;U</button>
-        </div>
+        <div class="tabbed-card">
 
-        <div class="tab-panel active" id="healthcare">
-            <h2>Healthcare Operators</h2>
+            <div class="card-tabs">
+                <button class="active" type="button" data-tab="healthcare">
+                    Healthcare
+                </button>
 
-            <div class="video-wrapper">
-                <iframe
-                    src="https://player.vimeo.com/video/1178828731?h=8a10d64cc4"
-                    title="Healthcare Operators"
-                    allowfullscreen>
-                </iframe>
+                <button type="button" data-tab="cu">
+                    C&amp;U
+                </button>
             </div>
-        </div>
 
-        <div class="tab-panel" id="cu">
-            <h2>College &amp; University</h2>
+            <div class="card">
 
-            <div class="video-wrapper">
-                <iframe
-                    src="https://player.vimeo.com/video/1184931776?h=10c8339a5a"
-                    title="College and University"
-                    allowfullscreen>
-                </iframe>
+                <div class="tab-panel active" id="healthcare">
+                    <h2>Healthcare Operators</h2>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://player.vimeo.com/video/1178828731?h=8a10d64cc4"
+                            title="Healthcare Operators"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="cu">
+                    <h2>College &amp; University</h2>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://player.vimeo.com/video/1184931776?h=10c8339a5a"
+                            title="College and University"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
             </div>
-        </div>
 
-    </div>
-       
+        </div>
 
     </div>
 </div>
+
+<script>
+    const tabButtons = document.querySelectorAll('.card-tabs button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.dataset.tab;
+
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+
+            button.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+</script>
 
 </body>
 
