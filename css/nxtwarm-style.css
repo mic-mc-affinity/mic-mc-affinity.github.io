@@ -137,6 +137,42 @@ p {
     text-decoration: underline;
 }
 
+/* CARD TABS */
+
+.card-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.card-tabs button {
+    background: #ffffff;
+    color: var(--blue);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.card-tabs button.active {
+    background: var(--blue);
+    color: #ffffff;
+    border-color: var(--blue);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
 /* CARD */
 
 .card {
