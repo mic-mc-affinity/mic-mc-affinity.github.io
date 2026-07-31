@@ -344,14 +344,14 @@ header {
 
 
 /* =========================================================
-   OPTIONAL IMAGE OR MAP
+   OPTIONAL PROMO IMAGE
    ========================================================= */
 
-.map-image {
+.promo-image {
   padding: 0 22px 22px;
 }
 
-.map-image img {
+.promo-image img {
   width: 100%;
   height: auto;
   margin: 0 auto;
