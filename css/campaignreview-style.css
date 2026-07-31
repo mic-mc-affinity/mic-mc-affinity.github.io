@@ -104,6 +104,70 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
+/* =========================================================
+   VIDEO TABS
+   ========================================================= */
+
+.tab-list {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+
+  background: #e5e8ed;
+  border-bottom: 1px solid #d6dae1;
+
+  scrollbar-width: thin;
+}
+
+.tab-button {
+  flex: 1 0 130px;
+
+  min-height: 52px;
+  padding: 12px 16px;
+
+  background: transparent;
+  color: var(--primary);
+
+  border: 0;
+  border-right: 1px solid #d6dae1;
+  border-bottom: 4px solid transparent;
+
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tab-button:last-child {
+  border-right: 0;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.tab-button.active {
+  background: var(--white);
+  border-bottom-color: var(--primary);
+}
+
+.tab-button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid rgba(46, 59, 81, 0.3);
+  outline-offset: -3px;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
 
 /* VIDEO */
 
