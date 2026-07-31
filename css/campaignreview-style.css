@@ -359,3 +359,44 @@ header {
   border-radius: var(--card-radius);
 }
 
+/* =========================================================
+   REP NOTES / PRODUCT LIST
+   ========================================================= */
+
+.rep-notes {
+  margin-top: 24px;
+}
+
+.rep-notes-title {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rep-notes-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.rep-notes-list > li {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.rep-notes-list ul {
+  margin-top: 4px;
+  padding-left: 24px;
+}
+
+.rep-notes-list ul li {
+  margin-bottom: 3px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.rep-notes-list li::marker {
+  color: var(--primary);
+}
