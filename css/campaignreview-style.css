@@ -13,6 +13,8 @@
   --primary: #2e3b51;
   --primary-hover: #40516e;
 
+  --accent: #F89621;
+
   --page-background: #f0f2f5;
   --card-background: #ffffff;
   --tab-background: #e5e8ed;
@@ -185,6 +187,7 @@ header {
 
   transition:
     background-color 0.2s ease,
+    color 0.2s ease,
     border-color 0.2s ease;
 }
 
@@ -192,20 +195,22 @@ header {
   border-right: 0;
 }
 
-.tab-button:hover {
-  background: rgba(255, 255, 255, 0.55);
+.tab-button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .tab-button.active {
-  background: var(--card-background);
-  border-bottom-color: var(--primary);
+  background: var(--accent);
+  color: var(--white);
+  border-bottom-color: var(--accent);
+  font-weight: 700;
 }
 
 .tab-button:focus-visible {
   position: relative;
   z-index: 1;
 
-  outline: 3px solid rgba(46, 59, 81, 0.3);
+  outline: 3px solid rgba(248, 150, 33, 0.35);
   outline-offset: -3px;
 }
 
