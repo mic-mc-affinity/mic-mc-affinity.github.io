@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Affinity Group video presentation and resources."
+  >
+
+  <title>AffinityNXT Campaign Review</title>
+
+  <link rel="stylesheet" href="../css/campaignreview-style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+
+      <div class="logo-container">
+
+        <!-- AFFINITY GROUP LOGO -->
+        <img
+          src="../images/AG Horizontal Primary.png"
+          alt="Affinity Group"
+          class="logo affinity-logo"
+        >
+
+        <!-- CLIENT LOGO -->
+        <img
+          src="../images/mdlz-logo.png"
+          alt="Client company"
+          class="logo client-logo"
+        >
+        <img
+          src="../images/ritz-logo.png"
+          alt="Client company"
+          class="logo client-logo"
+        >
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="container">
+
+      <article class="video-container">
+
+        <!-- TAB BUTTONS -->
+        <div
+          class="tab-list"
+          role="tablist"
+          aria-label="Available videos"
+        >
+
+          <button
+            type="button"
+            class="tab-button active"
+            id="video-tab-1"
+            role="tab"
+            aria-selected="true"
+            aria-controls="video-panel-1">
+            C&U, B&I, Grab & Go
+          </button>
+
+          <button
+            type="button"
+            class="tab-button"
+            id="video-tab-2"
+            role="tab"
+            aria-selected="false"
+            aria-controls="video-panel-2"
+            tabindex="-1">
+            Commercial
+          </button>
+
+        </div>
+
+
+        <!-- VIDEO TAB ONE -->
+        <section
+          class="tab-panel"
+          id="video-panel-1"
+          role="tabpanel"
+          aria-labelledby="video-tab-1"
+        >
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1221505265?h=54e7878dcf"
+              title="Video one"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-info">
+
+            <h2 class="video-title">
+              Penn State University
+            </h2>
+
+            <p class="video-address">
+              201 Old Main, University Park, PA 16802, United States
+            </p>
+
+            <p style="display:none;" class="promo-text">
+              Add an optional promotional message here.
+            </p>
+
+            <div style="display:none;" class="button-row">
+
+              <a
+                href="https://example.com"
+                class="request-button"
+                target="_blank"
+                rel="noopener noreferrer">
+                Primary Action
+              </a>
+
+              <a
+                href="https://example.com"
+                class="request-button"
+                target="_blank"
+                rel="noopener noreferrer">
+                Learn More
+              </a>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- VIDEO TAB TWO -->
+        <section
+          class="tab-panel"
+          id="video-panel-2"
+          role="tabpanel"
+          aria-labelledby="video-tab-2"
+          hidden
+        >
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1229192881?h=dadf4aa738"
+              title="Video two"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-info">
+
+            <h2 class="video-title">
+              Smash Bros Burgers
+            </h2>
+
+            <p class="video-address">
+              South Miami, FL
+            </p>
+
+          </div>
+
+        </section>
+
+      </article>
+  <div class="rep-notes">
+
+  <h3 class="rep-notes-title">
+    (Rep Notes not shown on live campaign)<br> <br> 
+    Featured Products 
+
+  </h3>
+
+  <ul class="rep-notes-list">
+
+    <li>
+      RITZ Toasted Chips Sour Cream & Onion
+
+      <ul>
+        <li>mfg # 193201119100</li>
+        <li>1.75 oz package</li>
+        <li>60ct</li>
+      </ul>
+    </li>
+
+  </ul>
+
+</div>
+    </div>
+  </main>
+
+
+  <!-- TAB FUNCTIONALITY -->
+  <script>
+    const tabList = document.querySelector(".tab-list");
+    const tabs = Array.from(document.querySelectorAll(".tab-button"));
+    const panels = Array.from(document.querySelectorAll(".tab-panel"));
+
+    function pausePanelVideo(panel) {
+      const iframe = panel.querySelector("iframe");
+
+      if (!iframe || !iframe.contentWindow) {
+        return;
+      }
+
+      iframe.contentWindow.postMessage(
+        JSON.stringify({ method: "pause" }),
+        "*"
+      );
+    }
+
+    function openTab(selectedTab) {
+      tabs.forEach((tab) => {
+        const isSelected = tab === selectedTab;
+
+        tab.classList.toggle("active", isSelected);
+        tab.setAttribute("aria-selected", String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+      });
+
+      panels.forEach((panel) => {
+        const isSelected =
+          panel.id === selectedTab.getAttribute("aria-controls");
+
+        if (!isSelected) {
+          pausePanelVideo(panel);
+        }
+
+        panel.hidden = !isSelected;
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        openTab(tab);
+      });
+    });
+
+    tabList.addEventListener("keydown", (event) => {
+      const currentIndex = tabs.indexOf(document.activeElement);
+      let nextIndex = currentIndex;
+
+      if (event.key === "ArrowRight") {
+        nextIndex = (currentIndex + 1) % tabs.length;
+      }
+
+      if (event.key === "ArrowLeft") {
+        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+      }
+
+      if (event.key === "Home") {
+        nextIndex = 0;
+      }
+
+      if (event.key === "End") {
+        nextIndex = tabs.length - 1;
+      }
+
+      if (nextIndex !== currentIndex) {
+        event.preventDefault();
+        tabs[nextIndex].focus();
+        openTab(tabs[nextIndex]);
+      }
+    });
+  </script>
+
+</body>
+</html>
