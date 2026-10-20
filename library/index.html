@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Affinity Group campaign video library.">
+
+  <title>Affinity Group Campaign Library</title>
+
+  <link rel="stylesheet" href="../css/campaign-library-style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <img
+        src="../images/AGHorizontalPrimary-WHITEFont.png"
+        alt="Affinity Group"
+        class="logo"
+      >
+
+      <span class="header-label">Campaign Library</span>
+
+    </div>
+  </header>
+
+
+  <!-- INTRO -->
+  <section class="hero">
+    <div class="container">
+
+      <p class="eyebrow">2026 Campaigns</p>
+
+      <h1 class="hero-title">Campaign Video Library</h1>
+
+      <p class="hero-text">
+        <!-- EDIT: one or two sentences for your audience -->
+        Browse the campaign videos Affinity Group produced with our clients this year.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- SEARCH + FILTERS -->
+  <section class="toolbar" aria-label="Search and filter videos">
+    <div class="container">
+
+      <label class="search-label" for="video-search">Search by client or campaign</label>
+      <input
+        type="search"
+        id="video-search"
+        class="search-input"
+        placeholder="Search by client or campaign"
+        autocomplete="off"
+      >
+
+      <!-- Filter buttons are built automatically from each card's data-category -->
+      <div class="filter-row" id="filter-row" role="group" aria-label="Filter by category"></div>
+
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+
+    </div>
+  </section>
+
+
+  <!-- VIDEO GRID -->
+  <main class="content">
+    <div class="container">
+
+      <div class="video-grid" id="video-grid">
+
+        <!-- =====================================================
+             VIDEO CARD — copy this whole <article> block to add a video.
+             data-category : used for the filter buttons
+             data-client   : used by search
+             ===================================================== -->
+        <article class="video-card" data-category="Category One" data-client="Client Name One">
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/VIDEO-ID-ONE?h=VIDEO-CODE"
+              title="Client Name One – Campaign Title"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="card-body">
+            <p class="client-name">Client Name One</p>
+            <h2 class="campaign-title">Campaign Title</h2>
+            <p class="campaign-meta">Month 2026 · Category One</p>
+
+            <!-- OPTIONAL: short description. Delete the line if not needed. -->
+            <p class="campaign-description">
+              Optional one-line summary of the campaign.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="video-card" data-category="Category Two" data-client="Client Name Two">
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/VIDEO-ID-TWO?h=VIDEO-CODE"
+              title="Client Name Two – Campaign Title"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="card-body">
+            <p class="client-name">Client Name Two</p>
+            <h2 class="campaign-title">Campaign Title</h2>
+            <p class="campaign-meta">Month 2026 · Category Two</p>
+          </div>
+
+        </article>
+
+
+        <article class="video-card" data-category="Category One" data-client="Client Name Three">
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/VIDEO-ID-THREE?h=VIDEO-CODE"
+              title="Client Name Three – Campaign Title"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="card-body">
+            <p class="client-name">Client Name Three</p>
+            <h2 class="campaign-title">Campaign Title</h2>
+            <p class="campaign-meta">Month 2026 · Category One</p>
+          </div>
+
+        </article>
+
+
+        <article class="video-card" data-category="Category Two" data-client="Client Name Four">
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/VIDEO-ID-FOUR?h=VIDEO-CODE"
+              title="Client Name Four – Campaign Title"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="card-body">
+            <p class="client-name">Client Name Four</p>
+            <h2 class="campaign-title">Campaign Title</h2>
+            <p class="campaign-meta">Month 2026 · Category Two</p>
+          </div>
+
+        </article>
+
+      </div>
+
+      <p class="no-results" id="no-results" hidden>
+        No videos match your search.
+      </p>
+
+    </div>
+  </main>
+
+
+  <!-- CONTACT BAND (for prospective clients) -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+
+      <div>
+        <h2 class="cta-title">Interested in a campaign?</h2>
+        <p class="cta-text">
+          <!-- EDIT: your message -->
+          Talk to your Affinity Group representative about what we can build for your brand.
+        </p>
+      </div>
+
+      <!-- EDIT: put the correct contact link here -->
+      <a href="mailto:CONTACT-EMAIL-HERE" class="cta-button">Contact Us</a>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Affinity Group</p>
+    </div>
+  </footer>
+
+
+  <!-- SEARCH + FILTER FUNCTIONALITY -->
+  <script>
+    const cards = Array.from(document.querySelectorAll(".video-card"));
+    const searchInput = document.getElementById("video-search");
+    const filterRow = document.getElementById("filter-row");
+    const resultCount = document.getElementById("result-count");
+    const noResults = document.getElementById("no-results");
+
+    let activeCategory = "All";
+
+    // Build one filter button per unique category, plus "All"
+    const categories = ["All", ...new Set(
+      cards.map((card) => card.dataset.category).filter(Boolean)
+    )];
+
+    categories.forEach((category) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "filter-button";
+      button.textContent = category;
+      button.setAttribute("aria-pressed", String(category === "All"));
+
+      button.addEventListener("click", () => {
+        activeCategory = category;
+
+        filterRow.querySelectorAll(".filter-button").forEach((btn) => {
+          btn.setAttribute("aria-pressed", String(btn === button));
+        });
+
+        applyFilters();
+      });
+
+      filterRow.appendChild(button);
+    });
+
+    // Hide the filter row if there is only one category
+    if (categories.length <= 2) {
+      filterRow.hidden = true;
+    }
+
+    function pauseVideo(card) {
+      const iframe = card.querySelector("iframe");
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({ method: "pause" }), "*");
+      }
+    }
+
+    function applyFilters() {
+      const term = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const text = (
+          card.dataset.client + " " + card.textContent
+        ).toLowerCase();
+
+        const matchesCategory =
+          activeCategory === "All" || card.dataset.category === activeCategory;
+        const matchesSearch = term === "" || text.includes(term);
+        const show = matchesCategory && matchesSearch;
+
+        if (!show) {
+          pauseVideo(card);
+        }
+
+        card.hidden = !show;
+        if (show) visible++;
+      });
+
+      resultCount.textContent =
+        visible === 1 ? "Showing 1 video" : `Showing ${visible} videos`;
+      noResults.hidden = visible !== 0;
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    applyFilters();
+  </script>
+
+</body>
+</html>
