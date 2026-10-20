@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+t<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
   <title>Affinity Group Campaign Library</title>
 
-  <link rel="stylesheet" href="../css/library-style.css">
+  <link rel="stylesheet" href="../css/ibrary-style.css">
 </head>
 
 <body>
@@ -82,8 +82,8 @@
 
           <div class="video-wrapper">
             <iframe
-              src="https://player.vimeo.com/video/VIDEO-ID-ONE?h=VIDEO-CODE"
-              title="Client Name One – Campaign Title"
+              src="https://player.vimeo.com/video/1223541290?h=d915dfbe95"
+              title="Bush's Beans Do"
               loading="lazy"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen>
@@ -91,14 +91,8 @@
           </div>
 
           <div class="card-body">
-            <p class="client-name">Client Name One</p>
-            <h2 class="campaign-title">Campaign Title</h2>
-            <p class="campaign-meta">Month 2026 · Category One</p>
-
-            <!-- OPTIONAL: short description. Delete the line if not needed. -->
-            <p class="campaign-description">
-              Optional one-line summary of the campaign.
-            </p>
+            <p class="client-name">Bush Brothers</p>
+            <h2 class="campaign-title">Beans Beans Do: Core Line Up</h2>
           </div>
 
         </article>
@@ -108,8 +102,8 @@
 
           <div class="video-wrapper">
             <iframe
-              src="https://player.vimeo.com/video/VIDEO-ID-TWO?h=VIDEO-CODE"
-              title="Client Name Two – Campaign Title"
+              src="https://player.vimeo.com/video/1214643502?h=602e75d8ad"
+              title="Hidden Valley Ranch - Turn Up The Flavor"
               loading="lazy"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen>
@@ -117,9 +111,8 @@
           </div>
 
           <div class="card-body">
-            <p class="client-name">Client Name Two</p>
-            <h2 class="campaign-title">Campaign Title</h2>
-            <p class="campaign-meta">Month 2026 · Category Two</p>
+            <p class="client-name">Hidden Valley Kitchens</p>
+            <h2 class="campaign-title">Turn Up The Flavor</h2>
           </div>
 
         </article>
@@ -243,12 +236,29 @@
       filterRow.hidden = true;
     }
 
+    // Pauses a card's video (works for Vimeo iframes and MP4 <video> tags)
     function pauseVideo(card) {
+      const video = card.querySelector("video");
+      if (video) {
+        video.pause();
+      }
+
       const iframe = card.querySelector("iframe");
       if (iframe && iframe.contentWindow) {
         iframe.contentWindow.postMessage(JSON.stringify({ method: "pause" }), "*");
       }
     }
+
+    // Only one MP4 plays at a time: starting one pauses the others
+    document.querySelectorAll(".video-card video").forEach((video) => {
+      video.addEventListener("play", () => {
+        cards.forEach((card) => {
+          if (!card.contains(video)) {
+            pauseVideo(card);
+          }
+        });
+      });
+    });
 
     function applyFilters() {
       const term = searchInput.value.trim().toLowerCase();
@@ -283,6 +293,9 @@
 
     applyFilters();
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
