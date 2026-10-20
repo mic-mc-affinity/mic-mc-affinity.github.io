@@ -1,4 +1,4 @@
-t<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@ t<!DOCTYPE html>
 
   <title>Affinity Group Campaign Library</title>
 
-  <link rel="stylesheet" href="../css/ibrary-style.css">
+  <link rel="stylesheet" href="../css/library-style.css">
 </head>
 
 <body>
@@ -74,83 +74,311 @@ t<!DOCTYPE html>
       <div class="video-grid" id="video-grid">
 
         <!-- =====================================================
-             VIDEO CARD — copy this whole <article> block to add a video.
-             data-category : used for the filter buttons
-             data-client   : used by search
+             VIDEO CARDS — sorted A–Z by client name.
+             To add a video, copy one <article> block and put it in
+             the correct alphabetical place.
+             Vimeo videos use <iframe>. MP4 links use <video>.
+             Optional: add data-category="..." to a card to turn on
+             filter buttons automatically.
              ===================================================== -->
-        <article class="video-card" data-category="Category One" data-client="Client Name One">
 
+        <!-- Barilla – Al Bronzo -->
+        <article class="video-card" data-client="Barilla">
+          <div class="video-wrapper">
+            <video controls playsinline preload="metadata" title="Barilla – Al Bronzo">
+              <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/UYX9BIOSUPOO/fileda75eb7cf69.mp4#t=0.1" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Barilla</p>
+            <h2 class="campaign-title">Al Bronzo</h2>
+          </div>
+        </article>
+
+        <!-- Barilla – Protein Plus Pasta -->
+        <article class="video-card" data-client="Barilla">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1178828731?h=8a10d64cc4"
+              title="Barilla – Protein Plus Pasta"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Barilla</p>
+            <h2 class="campaign-title">Protein Plus Pasta</h2>
+          </div>
+        </article>
+
+        <!-- Basic American – Hashbrowns -->
+        <article class="video-card" data-client="Basic American">
+          <div class="video-wrapper">
+            <video controls playsinline preload="metadata" title="Basic American – Hashbrowns">
+              <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/7JPZTGA92J22/file15b8d30d42f88.mp4#t=0.1" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Basic American</p>
+            <h2 class="campaign-title">Hashbrowns</h2>
+          </div>
+        </article>
+
+        <!-- Bush&#x27;s Best – Bush&#x27;s Bean Do - Core Line Up -->
+        <article class="video-card" data-client="Bush&#x27;s Best">
           <div class="video-wrapper">
             <iframe
               src="https://player.vimeo.com/video/1223541290?h=d915dfbe95"
-              title="Bush's Beans Do"
+              title="Bush&#x27;s Best – Bush&#x27;s Bean Do - Core Line Up"
               loading="lazy"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>
-
           <div class="card-body">
-            <p class="client-name">Bush Brothers</p>
-            <h2 class="campaign-title">Beans Beans Do: Core Line Up</h2>
+            <p class="client-name">Bush&#x27;s Best</p>
+            <h2 class="campaign-title">Bush&#x27;s Bean Do - Core Line Up</h2>
           </div>
-
         </article>
 
+        <!-- Dole – 100% Pineapple Juice -->
+        <article class="video-card" data-client="Dole">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1173354330?h=a503160229"
+              title="Dole – 100% Pineapple Juice"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Dole</p>
+            <h2 class="campaign-title">100% Pineapple Juice</h2>
+          </div>
+        </article>
 
-        <article class="video-card" data-category="Category Two" data-client="Client Name Two">
+        <!-- Dole – Frozen Fruit -->
+        <article class="video-card" data-client="Dole">
+          <div class="video-wrapper">
+            <video controls playsinline preload="metadata" title="Dole – Frozen Fruit">
+              <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/Y3ARSR0LBCOG/file8f4777902713.mp4#t=0.1" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Dole</p>
+            <h2 class="campaign-title">Frozen Fruit</h2>
+          </div>
+        </article>
 
+        <!-- ES Foods – Breakfast Breaks -->
+        <article class="video-card" data-client="ES Foods">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1164079770?h=218d7dfb2b"
+              title="ES Foods – Breakfast Breaks"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">ES Foods</p>
+            <h2 class="campaign-title">Breakfast Breaks</h2>
+          </div>
+        </article>
+
+        <!-- FUSiON FSM – Weetabix Have They Had Theirs -->
+        <article class="video-card" data-client="FUSiON FSM">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1176685805?h=33c32589e7"
+              title="FUSiON FSM – Weetabix Have They Had Theirs"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">FUSiON FSM</p>
+            <h2 class="campaign-title">Weetabix Have They Had Theirs</h2>
+          </div>
+        </article>
+
+        <!-- Hidden Valley Kitchens – Turn Up The Flavor -->
+        <article class="video-card" data-client="Hidden Valley Kitchens">
           <div class="video-wrapper">
             <iframe
               src="https://player.vimeo.com/video/1214643502?h=602e75d8ad"
-              title="Hidden Valley Ranch - Turn Up The Flavor"
+              title="Hidden Valley Kitchens – Turn Up The Flavor"
               loading="lazy"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>
-
           <div class="card-body">
             <p class="client-name">Hidden Valley Kitchens</p>
             <h2 class="campaign-title">Turn Up The Flavor</h2>
           </div>
-
         </article>
 
-
-        <article class="video-card" data-category="Category One" data-client="Client Name Three">
-
-<div class="video-wrapper">
-  <video controls playsinline preload="metadata">
-    <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/UYX9BIOSUPOO/fileda75eb7cf69.mp4" type="video/mp4">
-  </video>
-</div>
-          <div class="card-body">
-            <p class="client-name">Barilla</p>
-            <h2 class="campaign-title">Al Bronzo Pasta</h2>
-          </div>
-
-        </article>
-
-
-        <article class="video-card" data-category="Category Two" data-client="Client Name Four">
-
+        <!-- McCormick – AEA Food Show Invitation -->
+        <article class="video-card" data-client="McCormick">
           <div class="video-wrapper">
             <iframe
-              src="https://player.vimeo.com/video/VIDEO-ID-FOUR?h=VIDEO-CODE"
-              title="Client Name Four – Campaign Title"
+              src="https://player.vimeo.com/video/1173362113?h=c06d171ddc"
+              title="McCormick – AEA Food Show Invitation"
               loading="lazy"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>
-
           <div class="card-body">
-            <p class="client-name">Client Name Four</p>
-            <h2 class="campaign-title">Campaign Title</h2>
-            <p class="campaign-meta">Month 2026 · Category Two</p>
+            <p class="client-name">McCormick</p>
+            <h2 class="campaign-title">AEA Food Show Invitation</h2>
           </div>
+        </article>
 
+        <!-- McCormick – Franks and Cholula Football Sauces -->
+        <article class="video-card" data-client="McCormick">
+          <div class="video-wrapper">
+            <video controls playsinline preload="metadata" title="McCormick – Franks and Cholula Football Sauces">
+              <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/WQ4LH24SS5Z3/file20b2525b4f0f.mp4#t=0.1" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body">
+            <p class="client-name">McCormick</p>
+            <h2 class="campaign-title">Franks and Cholula Football Sauces</h2>
+          </div>
+        </article>
+
+        <!-- McCormick – Franks The GOAT -->
+        <article class="video-card" data-client="McCormick">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1187927718?h=53506a0b55"
+              title="McCormick – Franks The GOAT"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">McCormick</p>
+            <h2 class="campaign-title">Franks The GOAT</h2>
+          </div>
+        </article>
+
+        <!-- Mondelez – Teddy Grahams for K12 -->
+        <article class="video-card" data-client="Mondelez">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1206616848?h=9af2c80f8e"
+              title="Mondelez – Teddy Grahams for K12"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Mondelez</p>
+            <h2 class="campaign-title">Teddy Grahams for K12</h2>
+          </div>
+        </article>
+
+        <!-- Rich&#x27;s – Gluten Free Cauliflower Pizza Crust -->
+        <article class="video-card" data-client="Rich&#x27;s">
+          <div class="video-wrapper">
+            <video controls playsinline preload="metadata" title="Rich&#x27;s – Gluten Free Cauliflower Pizza Crust">
+              <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/V07LCJTDNKWB/file1694bc35989a.mp4#t=0.1" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Rich&#x27;s</p>
+            <h2 class="campaign-title">Gluten Free Cauliflower Pizza Crust</h2>
+          </div>
+        </article>
+
+        <!-- Rich&#x27;s – Soft Whip Cold Foam -->
+        <article class="video-card" data-client="Rich&#x27;s">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1192383146?h=8d53402d82"
+              title="Rich&#x27;s – Soft Whip Cold Foam"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Rich&#x27;s</p>
+            <h2 class="campaign-title">Soft Whip Cold Foam</h2>
+          </div>
+        </article>
+
+        <!-- Rosina – Celentano Ravioli Launch -->
+        <article class="video-card" data-client="Rosina">
+          <div class="video-wrapper">
+            <video controls playsinline preload="metadata" title="Rosina – Celentano Ravioli Launch">
+              <source src="https://s3-us-east-2.amazonaws.com/mascarinxt/R1X5QODET2ZZ/file409371f7aecc.mp4#t=0.1" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Rosina</p>
+            <h2 class="campaign-title">Celentano Ravioli Launch</h2>
+          </div>
+        </article>
+
+        <!-- Smucker&#x27;s – Table Top Syrups -->
+        <article class="video-card" data-client="Smucker&#x27;s">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1179337412?h=85cd860c9e"
+              title="Smucker&#x27;s – Table Top Syrups"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Smucker&#x27;s</p>
+            <h2 class="campaign-title">Table Top Syrups</h2>
+          </div>
+        </article>
+
+        <!-- Smucker&#x27;s – Uncrustables -->
+        <article class="video-card" data-client="Smucker&#x27;s">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1202920855?h=8616fae75b"
+              title="Smucker&#x27;s – Uncrustables"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Smucker&#x27;s</p>
+            <h2 class="campaign-title">Uncrustables</h2>
+          </div>
+        </article>
+
+        <!-- Sysco Classic – Hashbrowns -->
+        <article class="video-card" data-client="Sysco Classic">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1167496331?h=d09f966e27"
+              title="Sysco Classic – Hashbrowns"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="client-name">Sysco Classic</p>
+            <h2 class="campaign-title">Hashbrowns</h2>
+          </div>
         </article>
 
       </div>
@@ -287,9 +515,6 @@ t<!DOCTYPE html>
 
     applyFilters();
   </script>
-
-</body>
-</html>
 
 </body>
 </html>
